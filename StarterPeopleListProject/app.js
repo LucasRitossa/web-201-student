@@ -30,7 +30,7 @@ function personPage(request, response){
     }
     
     else if(index == 2){
-        response.send(path.join(__dirname, 'people2.html'));
+        response.sendfile(path.join(__dirname, 'people2.html'));
     }
 }
 /*app.get is an easy way to make express check for a path,
