@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <!--
+            no "=" equals sign because no javascript is being used,
+            "scriplet"
+        -->
+        <% if(person.alive){ %> 
+            <style>
+                body{
+                    background:green;
+                }
+            </style>
+        <% }else{ %>
+            <style>
+                body{
+                    background:red;
+                }
+            </style>
+        <% } %> 
+
+    </head>
+    <body>
+        
+        <h3>Person Information</h3>
+        <p>Name: <%= person.first_name + " " + person.last_name%></p>
+        <p>Occupation: <%= person.job%></p>
+        <img src="<%=person.avatar%>"/>
+    </body>
+</html>
