@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!--
+            no "=" equals sign because no javascript is being used,
+            "scriplet"
+        -->
+        <% if(person.alive){ %> 
+            <style>
+                body{
+                    background:green;
+                }
+            </style>
+        <% }else{ %>
+            <style>
+                body{
+                    background:red;
+                }
+            </style>
+        <% } %> 
+
+    </head>
+    <body>
+        <h3>Person Information</h3>
+        <p>Name: <%= person.first_name + " " + person.last_name%></p>
+        <p>Occupation: <%= person.job%></p>
+            <% if(indexNum > 0){ %> 
+                <a href="/person/?index=<%= indexNum-1 %>"><-</a>
+            <% }if(indexNum <24){ %> 
+                <a href="/person/?index=<%= indexNum+1 %>">-></a>
+            <% } %> 
+            <a href="/">home</a>
+    </body>
+</html>
