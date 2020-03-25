@@ -9,7 +9,7 @@
         <h1>HOME PAGE</h1>
             <% for(let i = 0; i < people.length; i++) {%> 
                 <li>
-                    <a href='/person?index=<% i %>''>
+                    <a href='/person?index=<%= i %>'>
                         <%= people[i].first_name + ' ' + people[i].last_name %>
                     </a>
                 </li>
