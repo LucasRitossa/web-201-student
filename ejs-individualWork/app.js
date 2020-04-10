@@ -10,14 +10,15 @@ let app = express();
 //reads json file, then puts entire array into var, peopleJson
 let rawdata = fs.readFileSync('people.json');
 let peopleJson = JSON.parse(rawdata);
-
+let sortedPeopleJSON = rawdata.sort;
 //handles user's requests and responces, simply responds with html files
 app.set('view engine', 'ejs');
 
 function homePage(request, response) {
-    response.render('home',{
-        people:peopleJson
-    });
+    console.log(sorted);
+        response.render('home',{
+            people:peopleJson
+        });
 }
 
 function personPage(request, response){
@@ -28,7 +29,7 @@ function personPage(request, response){
     let index = Number(parsedUrl.query.index);
     
     let currentPerson = peopleJson[index];
-
+    
     response.render('person',{
         person:currentPerson,
         indexNum:index
@@ -38,7 +39,7 @@ function personPage(request, response){
 then call a function if the path is found */
 app.get('/person', personPage);
 app.get('/', homePage);
-
+app.get('/sort', homePage)
 function listenCallback() {
     console.log(`Listening on http://${hostname}:${port}`);
 }
